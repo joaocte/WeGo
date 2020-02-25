@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WeGo.Administration.Core.Domain\WeGo.Administration.Core.Domain.csproj" />
+    <ProjectReference Include="..\WeGo.Administration.Domain\WeGo.Administration.Domain.csproj" />
+    <ProjectReference Include="..\WeGo.Administration.Infra.Data\WeGo.Administration.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
