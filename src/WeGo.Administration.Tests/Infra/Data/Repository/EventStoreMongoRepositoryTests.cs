@@ -22,8 +22,8 @@ namespace WeGo.Administration.Tests.Infra.Data.Repository
         public EventStoreMongoRepositoryTests()
         {
             configuration = Substitute.For<IConfiguration>();
-            configuration["MongoSettings:Connection"].Returns(@"mongodb://localhost:27017");
-            configuration["MongoSettings:DatabaseName"].Returns(typeof(StoredEvent).Name);
+            configuration["MongoConnection:ConnectionString"].Returns(@"mongodb://localhost:27017");
+            configuration["MongoConnection:Database"].Returns(typeof(StoredEvent).Name);
 
             context = Substitute.For<EventStoreMongoContext>(configuration);
             eventStoreRepository = new EventStoreMongoRepository(context);
