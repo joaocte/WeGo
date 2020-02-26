@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using System;
 using System.Threading.Tasks;
 using WeGo.Administration.Core.Domain.Bus;
 using WeGo.Administration.Core.Domain.Commands;
@@ -9,26 +10,26 @@ namespace WeGo.Administration.Infra.CrossCutting.Bus
 {
     public sealed class InMemoryBus : IMediatorHandler
     {
-        private readonly IEventStore eventStore;
-        private readonly IMediator mediator;
+        private readonly IEventStore _eventStore;
+        private readonly IMediator _mediator;
 
         public InMemoryBus(IEventStore eventStore, IMediator mediator)
         {
-            this.eventStore = eventStore;
-            this.mediator = mediator;
+            _eventStore = eventStore;
+            _mediator = mediator;
         }
 
         public Task RaiseEvent<T>(T @event) where T : Event
         {
             if (!@event.MessageType.Equals("DomainNotification"))
-                eventStore?.Save(@event);
+                _eventStore?.Save(@event);
 
-            return mediator.Publish(@event);
+            return _mediator.Publish(@event);
         }
 
         public Task SendCommand<T>(T command) where T : Command
         {
-            return mediator.Send(command);
+            return _mediator.Send(command);
         }
     }
 }

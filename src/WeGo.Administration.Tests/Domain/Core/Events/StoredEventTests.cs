@@ -34,7 +34,6 @@ namespace WeGo.Administration.Tests.Domain.Core.Events
         {
             var @event = Substitute.For<Event>();
             var data = DateTime.UtcNow.ToShortDateString();
-            var usuario = "usuario";
             var storedEvent = new StoredEventFake();
 
             Assert.NotNull(storedEvent);

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using WeGo.Administration.Core.Domain.Events;
 using WeGo.Administration.Core.Domain.Events.Interfaces;
+using WeGo.Administration.Domain.Interfaces;
 using WeGo.Administration.Infra.Data.Repository.EventSourcing;
 
 namespace WeGo.Administration.Infra.Data.EventSourcing

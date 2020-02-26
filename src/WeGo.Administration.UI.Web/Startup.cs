@@ -1,6 +1,6 @@
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -71,7 +71,6 @@ namespace WeGo.Administration.UI.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddMediatR(typeof(Startup));
             services.RegisterApplicationDependencies();
         }
     }
