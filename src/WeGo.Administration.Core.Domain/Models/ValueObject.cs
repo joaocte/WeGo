@@ -1,4 +1,6 @@
-﻿namespace WeGo.Administration.Core.Domain.Models
+﻿using System.Reflection;
+
+namespace WeGo.Administration.Core.Domain.Models
 {
     public abstract class ValueObject<T> where T : ValueObject<T>
     {

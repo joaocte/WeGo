@@ -31,14 +31,26 @@ namespace WeGo.Administration.Core.Domain.Models
         }
 
         /// <inheritdoc/>
+
         public override bool Equals(object obj)
         {
-            var compareTo = obj as Entity;
+            Entity compareTo = obj as Entity;
+            if (compareTo is null)
+            {
+                return false;
+            }
 
-            if (ReferenceEquals(this, compareTo)) return true;
-            if (compareTo is null) return false;
+            if (ReferenceEquals(this, compareTo))
+            {
+                return true;
+            }
 
-            return Id.Equals(compareTo.Id);
+            if (obj is string)
+            {
+                return compareTo.ToString() == this.Id.ToString();
+            }
+
+            return ((Entity)obj).Id == Id;
         }
 
         /// <inheritdoc/>
