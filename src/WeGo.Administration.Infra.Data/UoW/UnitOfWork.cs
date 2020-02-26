@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using WeGo.Administration.Domain.Interfaces.Context;
 using WeGo.Administration.Domain.Interfaces.UoW;
-using WeGo.Administration.Infra.Data.Context;
 
 namespace WeGo.Administration.Infra.Data.UoW
 {

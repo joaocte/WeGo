@@ -1,9 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
 using NSubstitute;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using WeGo.Administration.Core.Domain.Events;
 using WeGo.Administration.Infra.Data.Context;
 using WeGo.Administration.Infra.Data.Repository.EventSourcing;

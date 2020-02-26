@@ -27,9 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeGo.Administration.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeGo.Administration.Infra.Data", "src\WeGo.Administration.Infra.Data\WeGo.Administration.Infra.Data.csproj", "{318442A6-0781-43A5-850F-9438B225573C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wego.Administration.CrossCutting.IoC", "src\Wego.Administration.CrossCutting.IoC\Wego.Administration.CrossCutting.IoC.csproj", "{D45D16A3-E98C-4DA5-A84D-4974DACB905F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wego.Administration.CrossCutting.IoC", "src\Wego.Administration.CrossCutting.IoC\Wego.Administration.CrossCutting.IoC.csproj", "{D45D16A3-E98C-4DA5-A84D-4974DACB905F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeGo.Administration.UI.Web", "src\WeGo.Administration.UI.Web\WeGo.Administration.UI.Web.csproj", "{48450851-B769-4396-A047-8D71F50D066E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeGo.Administration.UI.Web", "src\WeGo.Administration.UI.Web\WeGo.Administration.UI.Web.csproj", "{48450851-B769-4396-A047-8D71F50D066E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeGo.Administration.Infra.CrossCutting.Bus", "src\WeGo.Administration.Infra.CrossCutting.Bus\WeGo.Administration.Infra.CrossCutting.Bus.csproj", "{A7904624-A4C1-4F0A-8A30-3A677F3C490E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,18 @@ Global
 		{48450851-B769-4396-A047-8D71F50D066E}.Release|x64.Build.0 = Release|Any CPU
 		{48450851-B769-4396-A047-8D71F50D066E}.Release|x86.ActiveCfg = Release|Any CPU
 		{48450851-B769-4396-A047-8D71F50D066E}.Release|x86.Build.0 = Release|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Debug|x64.Build.0 = Debug|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Debug|x86.Build.0 = Debug|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Release|x64.ActiveCfg = Release|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Release|x64.Build.0 = Release|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +140,7 @@ Global
 		{318442A6-0781-43A5-850F-9438B225573C} = {8EFE9419-732D-4ECF-A363-323FB0FFCB5D}
 		{D45D16A3-E98C-4DA5-A84D-4974DACB905F} = {E981D5B5-6BCC-402E-BFCD-2067AD326CF7}
 		{48450851-B769-4396-A047-8D71F50D066E} = {D9969932-ACB5-4C61-88B0-5678D92D082A}
+		{A7904624-A4C1-4F0A-8A30-3A677F3C490E} = {E981D5B5-6BCC-402E-BFCD-2067AD326CF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1411F03F-E869-43D8-B54A-FE541D789294}

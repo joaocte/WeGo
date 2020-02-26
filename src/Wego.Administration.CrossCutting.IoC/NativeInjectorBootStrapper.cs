@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using WeGo.Administration.Core.Domain.Bus;
 using WeGo.Administration.Core.Domain.Events.Interfaces;
 using WeGo.Administration.Core.Domain.Notifications;
-using WeGo.Administration.Domain.Interfaces;
 using WeGo.Administration.Domain.Interfaces.Context;
 using WeGo.Administration.Domain.Interfaces.UoW;
+using WeGo.Administration.Infra.CrossCutting.Bus;
 using WeGo.Administration.Infra.Data.Context;
 using WeGo.Administration.Infra.Data.EventSourcing;
 using WeGo.Administration.Infra.Data.Repository.EventSourcing;
@@ -18,6 +19,9 @@ namespace Wego.Administration.CrossCutting.IoC
         public static void RegisterApplicationDependencies(this IServiceCollection services)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
+
+            ///Domain - Bus
+            services.AddScoped<IMediatorHandler, InMemoryBus>();
             ///Domain - Events
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
 

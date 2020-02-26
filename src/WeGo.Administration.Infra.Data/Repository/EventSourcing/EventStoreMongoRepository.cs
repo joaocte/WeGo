@@ -1,12 +1,9 @@
 ﻿using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using WeGo.Administration.Core.Domain.Events;
 using WeGo.Administration.Domain.Interfaces.Context;
-using WeGo.Administration.Infra.Data.Context;
-using static MongoDB.Bson.Serialization.BsonDeserializationContext;
 
 namespace WeGo.Administration.Infra.Data.Repository.EventSourcing
 {
