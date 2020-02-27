@@ -15,7 +15,7 @@ namespace WeGo.Administration.Infra.Data.Repository
         /// <summary>
         ///
         /// </summary>
-        protected readonly IEventStoreMongoContext Context;
+        protected readonly IWeGoContext Context;
 
         /// <summary>
         /// Collection type of T
@@ -23,7 +23,7 @@ namespace WeGo.Administration.Infra.Data.Repository
         private readonly IMongoCollection<T> DbSet;
 
         /// <inheritdoc/>
-        public Repository(IEventStoreMongoContext context)
+        public Repository(IWeGoContext context)
         {
             this.Context = context;
             DbSet = Context.GetCollection<T>(typeof(T).Name);
