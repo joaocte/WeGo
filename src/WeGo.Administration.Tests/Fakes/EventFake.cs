@@ -7,8 +7,9 @@ namespace WeGo.Administration.Tests.Fakes
 {
     public class EventFake : Event
     {
-        public EventFake() : base()
+        public EventFake(Guid id) : base()
         {
+            AggregateId = id;
         }
     }
 }
