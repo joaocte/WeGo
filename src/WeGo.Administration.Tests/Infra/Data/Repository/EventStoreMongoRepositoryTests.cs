@@ -7,6 +7,7 @@ using NSubstitute;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WeGo.Administration.Core.Domain.Events;
 using WeGo.Administration.Domain.Interfaces.Context;
@@ -43,18 +44,30 @@ namespace WeGo.Administration.Tests.Infra.Data.Repository
         public void QuandoTentarObterTodosStoredEvent_RetornarDadosEncontrados()
         {
             var aggregateId = Guid.NewGuid();
+            asyncCursor.Current.ReturnsForAnyArgs(new List<StoredEvent> {
+            StoredEventFactory.ReturnNewStoredEvent(new EventFake(aggregateId)),
+            StoredEventFactory.ReturnNewStoredEvent(new EventFake(aggregateId)),
+            });
+            asyncCursor.MoveNext(Arg.Any<CancellationToken>()).ReturnsForAnyArgs(true, true, false);
+            asyncCursor.MoveNextAsync(Arg.Any<CancellationToken>()).ReturnsForAnyArgs(true, false);
 
             mongoCollection.FindAsync(Builders<StoredEvent>.Filter.Eq("_id", aggregateId)).ReturnsForAnyArgs(asyncCursor);
 
             var data = eventStoreRepository.All(aggregateId).Result;
 
-            Assert.Empty(data);
+            Assert.NotEmpty(data);
+            foreach (var item in data)
+            {
+                Assert.Equal("usuario", item.User);
+                Assert.Equal(aggregateId, item.AggregateId);
+            }
         }
 
         [Fact]
         public void QuantoTentarInsertirUmStoredEvent_ReturnarTaksCompleted()
         {
-            var @event = new EventFake();
+            var id = Guid.NewGuid();
+            var @event = new EventFake(id);
             var retorno = eventStoreRepository.Store(new StoredEvent(@event, DateTime.UtcNow.ToString(), "user"));
 
             Assert.NotNull(retorno);
